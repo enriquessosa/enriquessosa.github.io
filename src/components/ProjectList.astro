@@ -1,0 +1,18 @@
+---
+import { projects } from '../data/projects';
+interface Props { showTechnologies?: boolean; }
+const { showTechnologies = false } = Astro.props;
+---
+<ul class="project-list">
+  {projects.map((project) => (
+    <li>
+      <h3><a href={`/projects/${project.slug}/`}>{project.name}</a></h3>
+      <p>{project.description}</p>
+      {showTechnologies && <p class="technologies"><span class="visually-hidden">Technologies: </span>{project.technologies.join(' · ')}</p>}
+      <div class="project-links">
+        <a href={`/projects/${project.slug}/`}>Read about {project.name}<span aria-hidden="true"> →</span></a>
+        <a href={project.repository} aria-label={`${project.name} on GitHub`}>GitHub</a>
+      </div>
+    </li>
+  ))}
+</ul>

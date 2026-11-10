@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="About — Carlos Jimenez" description="About Carlos Jimenez: an interest in programming, Linux, and understanding computer systems through building software.">
+  <h1>About</h1>
+  <div class="prose">
+    <p>I'm Carlos Jimenez. I enjoy programming and understanding how computer systems work. Building tools gives me a practical way to experiment, ask questions, and learn.</p>
+    <p>My current projects explore Linux and systems-oriented development, mostly using Rust. I've been building tools for inspecting services, exploring repository structure, and comparing system observations.</p>
+    <p>I'm looking for my first professional opportunity. I'm open to different roles and technical areas, and I want to keep learning through useful work and collaboration.</p>
+    <p>You can explore my <a href="/projects/">projects</a> or read the source on <a href={site.github}>GitHub</a>.</p>
+  </div>
+</BaseLayout>

@@ -1,0 +1,19 @@
+{
+  "name": "carlos-jimenez-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.23.4",
+    "npm": ">=9.6.5"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "npm run build && node scripts/check-build.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.8"
+  }
+}

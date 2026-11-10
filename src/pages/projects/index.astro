@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectList from '../../components/ProjectList.astro';
+---
+<BaseLayout title="Projects — Carlos Jimenez" description="Pulse, Atlas, and Drift: software tools exploring Linux services, Rust repository structure, and local system observations.">
+  <h1>Projects</h1>
+  <p class="page-introduction">Tools I've built to explore software and computer systems. Each project includes a closer look at what it does and a link to the source.</p>
+  <section aria-labelledby="current-projects">
+    <h2 id="current-projects" class="visually-hidden">Current projects</h2>
+    <ProjectList showTechnologies />
+  </section>
+</BaseLayout>

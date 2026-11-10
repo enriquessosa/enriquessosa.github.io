@@ -1,0 +1,65 @@
+:root {
+  color-scheme: light;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #252525;
+  background: #fafaf9;
+  font-synthesis: none;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 1rem; }
+.site-shell { width: min(100% - 3rem, 42rem); margin-inline: auto; }
+.site-header { padding-block: 3rem 3.5rem; }
+nav { display: flex; flex-wrap: wrap; gap: 1.75rem; }
+a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1px; }
+a:hover { color: #111; text-decoration-thickness: 2px; }
+nav a { color: #60605b; text-decoration: none; padding-block: 0.5rem; }
+nav a[aria-current] { color: #252525; text-decoration: underline; }
+a:focus-visible { outline: 2px solid #285c6c; outline-offset: 5px; border-radius: 1px; }
+main:focus { outline: none; }
+h1, h2, h3 { line-height: 1.3; font-weight: 600; color: #202020; }
+h1 { font-size: clamp(1.75rem, 5vw, 2rem); letter-spacing: -0.035em; margin: 0 0 1.5rem; }
+h2 { font-size: 1.125rem; letter-spacing: -0.015em; margin: 0 0 1rem; }
+h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+h3 a { text-decoration: none; }
+h3 a:hover { text-decoration: underline; }
+p { margin: 0 0 1.25rem; }
+.intro { margin-bottom: 3.5rem; }
+.intro p, .prose p, .page-introduction { color: #50504c; }
+.intro > a { display: inline-block; margin-top: 0.25rem; }
+.project-list { list-style: none; padding: 0; margin: 0; }
+.project-list > li { padding-block: 1.5rem; border-top: 1px solid #deded8; }
+.project-list p { color: #50504c; margin-bottom: 0.75rem; }
+.project-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 0.875rem; }
+.project-list .technologies { font-size: 0.8125rem; color: #60605b; }
+.all-projects { display: inline-block; margin-top: 1rem; }
+.page-introduction { margin-bottom: 2rem; }
+.prose { overflow-wrap: anywhere; }
+.prose ul { padding-left: 1.25rem; color: #50504c; margin: 0; }
+.prose li + li { margin-top: 0.5rem; }
+.project-detail section + section { margin-top: 2rem; }
+.back-link { display: inline-block; font-size: 0.875rem; color: #60605b; margin-bottom: 1.5rem; }
+.site-footer { margin-top: 4rem; padding-block: 1.5rem 2.5rem; border-top: 1px solid #deded8; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; color: #60605b; font-size: 0.8125rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.skip-link { position: absolute; top: 0.5rem; left: 0.5rem; padding: 0.5rem 1rem; background: #fafaf9; transform: translateY(-200%); z-index: 1; }
+.skip-link:focus { transform: translateY(0); }
+@media (max-width: 40rem) {
+  .site-shell { width: calc(100% - 2.5rem); }
+  .site-header { padding-block: 1.75rem 2.5rem; }
+  .intro { margin-bottom: 2.75rem; }
+  .site-footer { margin-top: 3rem; }
+}
+
+/* Follow the system preference; keep all light-theme defaults above intact. */
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark; color: #e3e3df; background: #1c1d1b; }
+  h1, h2, h3 { color: #efefeb; }
+  a:hover { color: #f5f5f0; }
+  nav a, .project-list .technologies, .back-link, .site-footer { color: #a0a19a; }
+  nav a[aria-current] { color: #e3e3df; }
+  .intro p, .prose p, .prose ul, .page-introduction, .project-list p { color: #bbbcb6; }
+  .project-list > li, .site-footer { border-color: #383a36; }
+  a:focus-visible { outline-color: #9ab3bc; }
+  .skip-link { background: #1c1d1b; }
+}

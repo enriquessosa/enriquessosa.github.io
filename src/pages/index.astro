@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectList from '../components/ProjectList.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Carlos Jimenez — Software & systems" description={site.introduction}>
+  <section class="intro" aria-labelledby="intro-title">
+    <h1 id="intro-title">{site.name}</h1>
+    <p>{site.introduction}</p>
+    <p>I'm looking for my first professional opportunity and open to learning where I can contribute.</p>
+    <a href={site.github}>Find me on GitHub<span aria-hidden="true"> ↗</span></a>
+  </section>
+  <section aria-labelledby="selected-projects">
+    <h2 id="selected-projects">Selected projects</h2>
+    <ProjectList />
+    <a class="all-projects" href="/projects/">All projects<span aria-hidden="true"> →</span></a>
+  </section>
+</BaseLayout>

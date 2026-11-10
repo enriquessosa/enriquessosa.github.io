@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+const { project } = Astro.props;
+---
+<BaseLayout title={`${project.name} — Carlos Jimenez`} description={project.description}>
+  <a class="back-link" href="/projects/">← All projects</a>
+  <h1>{project.name}</h1>
+  <div class="prose project-detail">
+    <section aria-labelledby="overview"><h2 id="overview">Overview</h2><p>{project.description}</p></section>
+    <section aria-labelledby="purpose"><h2 id="purpose">Purpose</h2><p>{project.purpose}</p></section>
+    <section aria-labelledby="features"><h2 id="features">Features</h2><ul>{project.features.map((feature) => <li>{feature}</li>)}</ul></section>
+    <section aria-labelledby="technical-details"><h2 id="technical-details">Technical details</h2><p>{project.technicalDetails}</p></section>
+    <section aria-labelledby="technologies"><h2 id="technologies">Technologies</h2><p>{project.technologies.join(' · ')}</p></section>
+    <section aria-labelledby="repository"><h2 id="repository">Repository</h2><a href={project.repository}>View {project.name} on GitHub<span aria-hidden="true"> ↗</span></a></section>
+  </div>
+</BaseLayout>
